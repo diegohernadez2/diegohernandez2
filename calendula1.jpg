@@ -1,0 +1,266 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+}
+
+html{
+color-scheme: light;
+}
+
+body {
+background: url("img/calendula1.jpg") no-repeat center center fixed;
+background-size: cover;
+}
+
+#contenedor {
+max-width: 1200px;
+margin: 20px auto;
+background: rgba(255,255,255,0.55);
+backdrop-filter: blur(10px);
+border-radius: 15px;
+overflow: hidden;
+}
+
+#cabecera {
+text-align: center;
+padding: 25px;
+background: rgba(244,163,0,0.85);
+color: white;
+}
+
+#logo {
+width: 160px;
+height: 160px;
+object-fit: cover;
+border-radius: 50%;
+display: block;
+margin: 10px auto;
+border: 4px solid white;
+}
+
+#cabecera h1 {
+font-family: 'Playfair Display', serif;
+font-size: 4rem;
+color: white;
+text-shadow: 0 3px 15px rgba(0,0,0,0.5);
+}
+
+.menu{
+text-align:center;
+padding:15px;
+background:#fff3cc;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.btn{
+display:inline-block;
+padding:10px 18px;
+background:orange;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#e69500;
+transform:scale(1.05);
+}
+
+#alinear {
+display: flex;
+flex-wrap: wrap;
+}
+
+.publicidad {
+flex: 1;
+padding: 20px;
+text-align: center;
+background: rgba(255,248,230,0.85);
+border: 2px solid rgba(255,165,0,0.3);
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 10px;
+}
+
+.publicidad h3 {
+color: #a85a00;
+font-size: 18px;
+}
+
+.publicidad p {
+font-size: 14px;
+color: #333;
+}
+
+.ad-btn {
+display: inline-block;
+margin-top: 10px;
+padding: 10px 15px;
+background: #ff9800;
+color: white;
+text-decoration: none;
+border-radius: 8px;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.ad-btn:hover {
+background: #e65100;
+transform: scale(1.05);
+}
+
+.cuerpo {
+flex: 2;
+padding: 20px;
+text-align: center;
+}
+
+img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+.img {
+max-height: 300px;
+object-fit: cover;
+border-radius: 10px;
+}
+
+.gif {
+max-height: 250px;
+object-fit: contain;
+margin: 20px auto;
+}
+
+input,
+textarea {
+width: 100%;
+margin: 10px 0;
+padding: 10px;
+border-radius: 6px;
+}
+
+button {
+width: 100%;
+padding: 10px;
+background: orange;
+color: white;
+border: none;
+border-radius: 6px;
+font-size:16px;
+}
+
+.pie {
+text-align: center;
+padding: 20px;
+background: rgba(244,163,0,0.85);
+color: white;
+}
+
+.mariposa {
+position: fixed;
+width: 80px;
+z-index: 9999;
+pointer-events: none;
+}
+
+.m1 { 
+top: 10%; 
+left: -100px; 
+animation: v1 18s linear infinite; 
+}
+
+.m2 { 
+top: 40%; 
+left: -120px; 
+animation: v2 22s linear infinite; 
+}
+
+.m3 { 
+top: 70%; 
+left: -150px; 
+animation: v3 20s linear infinite; 
+}
+
+.m4 { 
+top: 25%; 
+left: -200px; 
+animation: v4 25s linear infinite; 
+}
+
+@keyframes v1 {
+0%{
+transform:translate(0,0);
+}
+100%{
+transform:translate(120vw,0);
+}
+}
+
+@keyframes v2 {
+0%{
+transform:translate(0,0);
+}
+100%{
+transform:translate(120vw,-50px);
+}
+}
+
+@keyframes v3 {
+0%{
+transform:translate(0,0);
+}
+100%{
+transform:translate(120vw,30px);
+}
+}
+
+@keyframes v4 {
+0%{
+transform:translate(0,0);
+}
+100%{
+transform:translate(120vw,-20px);
+}
+}
+
+@media (max-width:768px){
+
+#alinear{
+flex-direction:column;
+}
+
+.publicidad,
+.cuerpo{
+width:100%;
+}
+
+#logo{
+width:120px;
+height:120px;
+}
+
+#cabecera h1{
+font-size:2.5rem;
+}
+
+.menu{
+padding:10px;
+gap:8px;
+}
+
+.btn{
+padding:8px 14px;
+font-size:14px;
+}
+
+}
