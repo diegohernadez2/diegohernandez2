@@ -1,266 +1,245 @@
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-font-family: Arial, sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-color-scheme: light;
+color-scheme:light;
 }
 
-body {
-background: url("img/calendula1.jpg") no-repeat center center fixed;
-background-size: cover;
+body{
+font-family:Arial,sans-serif;
+background:url("img/fondo_memorama.gif");
+background-size:cover;
+background-position:center;
+overflow-x:hidden;
+color:white;
 }
 
-#contenedor {
-max-width: 1200px;
-margin: 20px auto;
-background: rgba(255,255,255,0.55);
-backdrop-filter: blur(10px);
-border-radius: 15px;
-overflow: hidden;
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+pointer-events:none;
 }
 
-#cabecera {
-text-align: center;
-padding: 25px;
-background: rgba(244,163,0,0.85);
-color: white;
+#barra{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.8);
+padding:8px;
+overflow:hidden;
+white-space:nowrap;
+z-index:9999;
 }
 
-#logo {
-width: 160px;
-height: 160px;
-object-fit: cover;
-border-radius: 50%;
-display: block;
-margin: 10px auto;
-border: 4px solid white;
+#texto{
+display:inline-block;
+animation:scroll 10s linear infinite;
+font-size:14px;
 }
 
-#cabecera h1 {
-font-family: 'Playfair Display', serif;
-font-size: 4rem;
-color: white;
-text-shadow: 0 3px 15px rgba(0,0,0,0.5);
+@keyframes scroll{
+
+0%{
+transform:translateX(-100%);
 }
 
-.menu{
+100%{
+transform:translateX(100%);
+}
+
+}
+
+#menu{
+margin-top:60px;
 text-align:center;
-padding:15px;
-background:#fff3cc;
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:10px;
+padding:10px;
+position:relative;
+z-index:5;
 }
 
 .btn{
 display:inline-block;
-padding:10px 18px;
+padding:10px 15px;
 background:orange;
 color:white;
 text-decoration:none;
 border-radius:8px;
 font-weight:bold;
-transition:0.3s;
+cursor:default;
 }
 
-.btn:hover{
-background:#e69500;
+#mensaje{
+position:fixed;
+top:100px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(0,0,0,0.85);
+padding:15px;
+font-size:20px;
+border:2px solid white;
+border-radius:10px;
+display:none;
+z-index:9999;
+}
+
+#tablero{
+display:grid;
+grid-template-columns:repeat(4,110px);
+grid-template-rows:repeat(3,110px);
+gap:10px;
+justify-content:center;
+margin-top:20px;
+position:relative;
+z-index:3;
+}
+
+.carta{
+width:110px;
+height:110px;
+background:rgba(0,0,0,0.6);
+border:2px solid white;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+overflow:hidden;
+transition:0.2s;
+}
+
+.carta:hover{
 transform:scale(1.05);
 }
 
-#alinear {
-display: flex;
-flex-wrap: wrap;
-}
-
-.publicidad {
-flex: 1;
-padding: 20px;
-text-align: center;
-background: rgba(255,248,230,0.85);
-border: 2px solid rgba(255,165,0,0.3);
-display: flex;
-flex-direction: column;
-justify-content: center;
-gap: 10px;
-}
-
-.publicidad h3 {
-color: #a85a00;
-font-size: 18px;
-}
-
-.publicidad p {
-font-size: 14px;
-color: #333;
-}
-
-.ad-btn {
-display: inline-block;
-margin-top: 10px;
-padding: 10px 15px;
-background: #ff9800;
-color: white;
-text-decoration: none;
-border-radius: 8px;
-font-weight: bold;
-transition: 0.3s;
-}
-
-.ad-btn:hover {
-background: #e65100;
-transform: scale(1.05);
-}
-
-.cuerpo {
-flex: 2;
-padding: 20px;
-text-align: center;
-}
-
-img {
-max-width: 100%;
-height: auto;
-display: block;
-}
-
-.img {
-max-height: 300px;
-object-fit: cover;
-border-radius: 10px;
-}
-
-.gif {
-max-height: 250px;
-object-fit: contain;
-margin: 20px auto;
-}
-
-input,
-textarea {
-width: 100%;
-margin: 10px 0;
-padding: 10px;
-border-radius: 6px;
-}
-
-button {
-width: 100%;
-padding: 10px;
-background: orange;
-color: white;
-border: none;
-border-radius: 6px;
-font-size:16px;
-}
-
-.pie {
-text-align: center;
-padding: 20px;
-background: rgba(244,163,0,0.85);
-color: white;
-}
-
-.mariposa {
-position: fixed;
-width: 80px;
-z-index: 9999;
-pointer-events: none;
-}
-
-.m1 { 
-top: 10%; 
-left: -100px; 
-animation: v1 18s linear infinite; 
-}
-
-.m2 { 
-top: 40%; 
-left: -120px; 
-animation: v2 22s linear infinite; 
-}
-
-.m3 { 
-top: 70%; 
-left: -150px; 
-animation: v3 20s linear infinite; 
-}
-
-.m4 { 
-top: 25%; 
-left: -200px; 
-animation: v4 25s linear infinite; 
-}
-
-@keyframes v1 {
-0%{
-transform:translate(0,0);
-}
-100%{
-transform:translate(120vw,0);
-}
-}
-
-@keyframes v2 {
-0%{
-transform:translate(0,0);
-}
-100%{
-transform:translate(120vw,-50px);
-}
-}
-
-@keyframes v3 {
-0%{
-transform:translate(0,0);
-}
-100%{
-transform:translate(120vw,30px);
-}
-}
-
-@keyframes v4 {
-0%{
-transform:translate(0,0);
-}
-100%{
-transform:translate(120vw,-20px);
-}
-}
-
-@media (max-width:768px){
-
-#alinear{
-flex-direction:column;
-}
-
-.publicidad,
-.cuerpo{
+.carta img{
 width:100%;
+height:100%;
+object-fit:cover;
+display:none;
 }
 
-#logo{
+.carta.mostrar img{
+display:block;
+}
+
+.carta.bien{
+background:limegreen;
+}
+
+.reinicio{
+text-align:center;
+margin-top:20px;
+margin-bottom:30px;
+}
+
+button{
+padding:10px 15px;
+font-size:16px;
+background:orange;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ff9800;
+transform:scale(1.05);
+}
+
+.monster{
+position:fixed;
 width:120px;
-height:120px;
+z-index:2;
+opacity:0.9;
+filter:drop-shadow(0 0 10px lime);
+animation:pulse 2s infinite;
+pointer-events:none;
 }
 
-#cabecera h1{
-font-size:2.5rem;
+@keyframes pulse{
+
+0%,
+100%{
+transform:scale(1);
 }
 
-.menu{
-padding:10px;
-gap:8px;
+50%{
+transform:scale(1.1);
+}
+
+}
+
+.m1{
+left:10px;
+top:30%;
+}
+
+.m2{
+right:10px;
+top:60%;
+}
+
+.estrella{
+position:fixed;
+width:30px;
+height:30px;
+opacity:0.9;
+z-index:1;
+pointer-events:none;
+animation:flotar linear infinite;
+}
+
+@keyframes flotar{
+
+0%{
+transform:translateY(-10vh);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+
+}
+
+@media(max-width:600px){
+
+#tablero{
+grid-template-columns:repeat(3,90px);
+grid-template-rows:auto;
+}
+
+.carta{
+width:90px;
+height:90px;
+}
+
+.monster{
+width:80px;
 }
 
 .btn{
-padding:8px 14px;
 font-size:14px;
+padding:8px 12px;
 }
 
 }
